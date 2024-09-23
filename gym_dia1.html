@@ -1,0 +1,65 @@
+<!--gym_dia1.html-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Día 1 - Piernas y Glúteos</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <h1>Día 1 - Piernas y Glúteos</h1>
+
+    <h2>Calentamiento</h2>
+    <p>5-10 minutos de caminata en la cinta o bicicleta estática.</p>
+
+    <h2>Circuito (3 rondas)</h2>
+    <ul>
+        <li>
+            <strong>Sentadillas con barra - 15 repeticiones:</strong>
+            <p>Técnica: Pies a la anchura de los hombros, baja flexionando las rodillas manteniendo la barra en los hombros.</p>
+            <img src="img/sentadillaconbarra.gif" alt="GIF Sentadilla con barra" />
+            <label for="peso_sentadillas">Peso (kg):</label>
+            <input type="number" id="peso_sentadillas" placeholder="0" />
+        </li>
+        <li>
+            <strong>Prensa de piernas - 12 repeticiones:</strong>
+            <p>Técnica: Coloca los pies en la plataforma y empuja hacia arriba manteniendo la espalda apoyada en el respaldo.</p>
+            <img src="img/prensapiernas.gif" alt="GIF Prensa de piernas" />
+            <label for="peso_prensa">Peso (kg):</label>
+            <input type="number" id="peso_prensa" placeholder="0" />
+        </li>
+        <li>
+            <strong>Elevación de talones (Calf Raises) - 15 repeticiones:</strong>
+            <p>Técnica: De pie, levanta los talones del suelo apretando los gemelos.</p>
+            <img src="img/calfraises.gif" alt="GIF Elevación de talones" />
+            <label for="peso_elevacion">Peso (kg):</label>
+            <input type="number" id="peso_elevacion" placeholder="0" />
+        </li>
+    </ul>
+    <p>Descanso: 60 segundos entre rondas.</p>
+
+    <h2>Enfriamiento</h2>
+    <p>5-10 minutos de estiramientos de piernas y glúteos.</p>
+
+    <button onclick="window.location.href='index.html'">Volver al Inicio</button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const pesos = ['peso_sentadillas', 'peso_prensa', 'peso_elevacion'];
+
+            pesos.forEach(id => {
+                const input = document.getElementById(id);
+                
+                if (localStorage.getItem(id)) {
+                    input.value = localStorage.getItem(id);
+                }
+
+                input.addEventListener('input', function() {
+                    localStorage.setItem(id, input.value);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

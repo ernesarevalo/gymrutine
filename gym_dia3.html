@@ -1,0 +1,65 @@
+<!--gym_dia3.html-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Día 3 - Pecho y Tríceps</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <h1>Día 3 - Pecho y Tríceps</h1>
+
+    <h2>Calentamiento</h2>
+    <p>5-10 minutos de movilidad de hombros y estiramientos de tríceps.</p>
+
+    <h2>Circuito (3 rondas)</h2>
+    <ul>
+        <li>
+            <strong>Press de banca - 12 repeticiones:</strong>
+            <p>Técnica: Acostado en el banco, baja la barra hasta el pecho y empuja hacia arriba.</p>
+            <img src="img/pressbanca.gif" alt="GIF Press de banca" />
+            <label for="peso_press">Peso (kg):</label>
+            <input type="number" id="peso_press" placeholder="0" />
+        </li>
+        <li>
+            <strong>Fondos en paralelas - 10 repeticiones:</strong>
+            <p>Técnica: Baja el cuerpo flexionando los codos hasta que los brazos estén en ángulo de 90 grados.</p>
+            <img src="img/fondosparalelas_gif.gif" alt="GIF Fondos en paralelas" />
+            <label for="peso_fondos">Peso (kg):</label>
+            <input type="number" id="peso_fondos" placeholder="0" />
+        </li>
+        <li>
+            <strong>Extensión de tríceps con mancuerna - 12 repeticiones:</strong>
+            <p>Técnica: De pie, con una mancuerna en ambas manos, extiende los brazos hacia arriba y baja detrás de la cabeza.</p>
+            <img src="img/extensiontricepmancuernas.gif" alt="GIF Extensión de tríceps con mancuerna" />
+            <label for="peso_extension">Peso (kg):</label>
+            <input type="number" id="peso_extension" placeholder="0" />
+        </li>
+    </ul>
+    <p>Descanso: 60 segundos entre rondas.</p>
+
+    <h2>Enfriamiento</h2>
+    <p>5-10 minutos de estiramientos de pecho y tríceps.</p>
+
+    <button onclick="window.location.href='index.html'">Volver al Inicio</button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const pesos = ['peso_press', 'peso_fondos', 'peso_extension'];
+
+            pesos.forEach(id => {
+                const input = document.getElementById(id);
+                
+                if (localStorage.getItem(id)) {
+                    input.value = localStorage.getItem(id);
+                }
+
+                input.addEventListener('input', function() {
+                    localStorage.setItem(id, input.value);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

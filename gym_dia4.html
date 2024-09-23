@@ -1,0 +1,65 @@
+<!--gym_dia4.html-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Día 4 - Cardio y Core</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <h1>Día 4 - Cardio y Core</h1>
+
+    <h2>Calentamiento</h2>
+    <p>5-10 minutos de caminata rápida o trote suave.</p>
+
+    <h2>Circuito (3 rondas)</h2>
+    <ul>
+        <li>
+            <strong>Abdominales (Crunches) - 15 repeticiones:</strong>
+            <p>Técnica: Acostado boca arriba, flexiona las rodillas y eleva los hombros del suelo.</p>
+            <img src="img/abdominales.gif" alt="GIF Crunches" />
+            <label for="peso_abdominales">Peso (kg):</label>
+            <input type="number" id="peso_abdominales" placeholder="0" />
+        </li>
+        <li>
+            <strong>Plancha - 30 segundos:</strong>
+            <p>Técnica: Mantén el cuerpo en línea recta apoyándote en los antebrazos y pies.</p>
+            <img src="img/plank.gif" alt="GIF Plancha" />
+            <label for="peso_plancha">Peso (kg):</label>
+            <input type="number" id="peso_plancha" placeholder="0" />
+        </li>
+        <li>
+            <strong>Burpees - 10 repeticiones:</strong>
+            <p>Técnica: Comienza en posición de pie, baja en cuclillas, salta hacia atrás en plancha, realiza una flexión y vuelve a la posición inicial.</p>
+            <img src="img/burpees.gif" alt="GIF Burpees" />
+            <label for="peso_burpees">Peso (kg):</label>
+            <input type="number" id="peso_burpees" placeholder="0" />
+        </li>
+    </ul>
+    <p>Descanso: 60 segundos entre rondas.</p>
+
+    <h2>Enfriamiento</h2>
+    <p>5-10 minutos de estiramientos de cuerpo completo.</p>
+
+    <button onclick="window.location.href='index.html'">Volver al Inicio</button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const pesos = ['peso_abdominales', 'peso_plancha', 'peso_burpees'];
+
+            pesos.forEach(id => {
+                const input = document.getElementById(id);
+                
+                if (localStorage.getItem(id)) {
+                    input.value = localStorage.getItem(id);
+                }
+
+                input.addEventListener('input', function() {
+                    localStorage.setItem(id, input.value);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
