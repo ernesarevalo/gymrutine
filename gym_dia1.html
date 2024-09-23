@@ -18,23 +18,20 @@
         <li>
             <strong>Sentadillas con barra - 15 repeticiones:</strong>
             <p>Técnica: Pies a la anchura de los hombros, baja flexionando las rodillas manteniendo la barra en los hombros.</p>
-            <img src="img/sentadillaconbarra.gif" alt="GIF Sentadilla con barra" />
-            <label for="peso_sentadillas">Peso (kg):</label>
-            <input type="number" id="peso_sentadillas" placeholder="0" />
+            <img class="img-ejercicio" src="img/sentadillapeso.gif" alt="GIF Sentadillas con barra" />
+            <label>Peso utilizado: <input type="number" id="pesoSentadillas" /></label>
         </li>
         <li>
             <strong>Prensa de piernas - 12 repeticiones:</strong>
             <p>Técnica: Coloca los pies en la plataforma y empuja hacia arriba manteniendo la espalda apoyada en el respaldo.</p>
-            <img src="img/prensapiernas.gif" alt="GIF Prensa de piernas" />
-            <label for="peso_prensa">Peso (kg):</label>
-            <input type="number" id="peso_prensa" placeholder="0" />
+            <img class="img-ejercicio" src="img/press_hombros_botella.jpg" alt="Imagen Prensa de piernas" />
+            <label>Peso utilizado: <input type="number" id="pesoPrensa" /></label>
         </li>
         <li>
             <strong>Elevación de talones (Calf Raises) - 15 repeticiones:</strong>
             <p>Técnica: De pie, levanta los talones del suelo apretando los gemelos.</p>
-            <img src="img/calfraises.gif" alt="GIF Elevación de talones" />
-            <label for="peso_elevacion">Peso (kg):</label>
-            <input type="number" id="peso_elevacion" placeholder="0" />
+            <img class="img-ejercicio" src="img/elevacion_talones.jpg" alt="GIF Elevación de talones" />
+            <label>Peso utilizado: <input type="number" id="pesoElevacion" /></label>
         </li>
     </ul>
     <p>Descanso: 60 segundos entre rondas.</p>
@@ -43,23 +40,5 @@
     <p>5-10 minutos de estiramientos de piernas y glúteos.</p>
 
     <button onclick="window.location.href='index.html'">Volver al Inicio</button>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const pesos = ['peso_sentadillas', 'peso_prensa', 'peso_elevacion'];
-
-            pesos.forEach(id => {
-                const input = document.getElementById(id);
-                
-                if (localStorage.getItem(id)) {
-                    input.value = localStorage.getItem(id);
-                }
-
-                input.addEventListener('input', function() {
-                    localStorage.setItem(id, input.value);
-                });
-            });
-        });
-    </script>
 </body>
 </html>

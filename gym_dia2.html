@@ -18,23 +18,20 @@
         <li>
             <strong>Dominadas (Pull-ups) - 8 repeticiones:</strong>
             <p>Técnica: Cuelga de la barra y tira hacia arriba hasta que la barbilla sobrepase la barra.</p>
-            <img src="img/pullups.gif" alt="GIF Dominadas" />
-            <label for="peso_dominadas">Peso (kg):</label>
-            <input type="number" id="peso_dominadas" placeholder="0" />
+            <img class="img-ejercicio" src="img/pullups.gif" alt="GIF Dominadas" />
+            <label>Peso utilizado: <input type="number" id="pesoDominadas" /></label>
         </li>
         <li>
             <strong>Remo con barra - 12 repeticiones:</strong>
             <p>Técnica: Inclínate hacia adelante con la espalda recta y tira de la barra hacia tu abdomen.</p>
-            <img src="img/remobarra.gif" alt="GIF Remo con barra" />
-            <label for="peso_remo">Peso (kg):</label>
-            <input type="number" id="peso_remo" placeholder="0" />
+            <img class="img-ejercicio" src="img/remobarra.gif" alt="GIF Remo con barra" />
+            <label>Peso utilizado: <input type="number" id="pesoRemo" /></label>
         </li>
         <li>
             <strong>Flexiones de bíceps con mancuernas - 12 repeticiones:</strong>
             <p>Técnica: De pie, con una mancuerna en cada mano, flexiona los codos llevando las mancuernas hacia los hombros.</p>
-            <img src="img/flexionesbicepsmancuernas.gif" alt="GIF Flexiones de bíceps con mancuernas" />
-            <label for="peso_biceps">Peso (kg):</label>
-            <input type="number" id="peso_biceps" placeholder="0" />
+            <img class="img-ejercicio" src="img/curlbicepbarra.gif" alt="GIF Flexiones de bíceps" />
+            <label>Peso utilizado: <input type="number" id="pesoBiceps" /></label>
         </li>
     </ul>
     <p>Descanso: 60 segundos entre rondas.</p>
@@ -43,23 +40,5 @@
     <p>5-10 minutos de estiramientos de espalda y bíceps.</p>
 
     <button onclick="window.location.href='index.html'">Volver al Inicio</button>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const pesos = ['peso_dominadas', 'peso_remo', 'peso_biceps'];
-
-            pesos.forEach(id => {
-                const input = document.getElementById(id);
-                
-                if (localStorage.getItem(id)) {
-                    input.value = localStorage.getItem(id);
-                }
-
-                input.addEventListener('input', function() {
-                    localStorage.setItem(id, input.value);
-                });
-            });
-        });
-    </script>
 </body>
 </html>
